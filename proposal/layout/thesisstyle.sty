@@ -1,0 +1,204 @@
+\ProvidesPackage{thesisstyle}
+% @See: tips_and_guidelines.tex
+
+% VF: Required Packages + Packages that Might be Useful (and their settings)
+\RequirePackage{import}
+\RequirePackage{lipsum}
+\RequirePackage{indentfirst}
+\RequirePackage{hyperref}
+\RequirePackage{cleveref}
+\RequirePackage{url}
+\RequirePackage{booktabs}
+\RequirePackage{graphicx}
+\RequirePackage[table,xcdraw, dvipsnames]{xcolor}
+\RequirePackage[parfill]{parskip}
+\RequirePackage{wrapfig}
+\RequirePackage{listings}
+\RequirePackage{enumitem}
+\RequirePackage[toc,page]{appendix}
+\RequirePackage{longtable}
+\RequirePackage{rotating}
+\RequirePackage{multirow}
+\RequirePackage{pgfplots}
+\RequirePackage{fontspec}
+\RequirePackage{xspace}
+\RequirePackage[nott]{inconsolata}
+\RequirePackage{caption}
+\RequirePackage[autostyle]{csquotes}
+\RequirePackage[]{algorithm2e}
+% add TODOs https://ctan.org/pkg/todonotes
+\RequirePackage{todonotes}
+\RequirePackage{float}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%
+% START LISTINGS CONFIGURATION
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\RequirePackage[framemethod=TikZ]{mdframed}
+% \setmonofont{Inconsolata}
+\setmonofont[Scale=MatchLowercase]{DejaVu Sans Mono}
+
+% capital RGB for the 0-255 range
+\definecolor{myverylightgrey}{RGB}{240,240,240}
+\definecolor{mydarkergrey}{RGB}{200,200,200}
+\definecolor{brightblue}{RGB}{38,157,217}
+
+\mdfsetup{
+    middlelinewidth=1pt,
+    backgroundcolor=white,
+    rightline=false,
+    leftline=false
+}
+
+% \setminted{bgcolor=myverylightgrey}
+% \usemintedstyle[scala]{manni}
+
+% JF: use to print B&W
+% \usemintedstyle{bw}
+
+\BeforeBeginEnvironment{minted}{\begin{mdframed}}
+\AfterEndEnvironment{minted}{\end{mdframed}}
+
+\AtBeginEnvironment{minted}{\renewcommand{\fcolorbox}[4][]{#4}}
+
+% see http://tex.stackexchange.com/questions/108371/combining-tikzpicture-and-lstlisting
+\mdfdefinestyle{lstlisting}{%
+innertopmargin=5pt,
+skipabove=\topskip,
+skipbelow=\topskip,
+roundcorner=5pt,
+}
+
+% \surroundwithmdframed[
+%   skipabove=\topsep,
+%   skipbelow=\topsep,
+%   settings=\captionof{lstlisting}{}
+% ]{lstlisting}
+
+\lstnewenvironment{code}[1][]{%
+\lstset{#1}%
+\mdframed[style=lstlisting]%
+}{\endmdframed}
+
+% \newcommand\YAMLcolonstyle{\color{black}\mdseries}
+% \newcommand\YAMLkeystyle{\color{black}\bfseries}
+% \newcommand\YAMLvaluestyle{\color{black}\mdseries}
+
+% \lstdefinelanguage{yaml}{
+%   keywords={true,false,null,y,n},
+%   keywordstyle=\YAMLkeystyle\ttfamily,
+%   basicstyle=\YAMLkeystyle\ttfamily,                        % assuming a key comes first
+%   sensitive=false,
+%   comment=[l]{\#},
+%   morecomment=[s]{/*}{*/},
+%   commentstyle=\color{purple}\ttfamily,
+%   stringstyle=\YAMLvaluestyle\ttfamily,
+%   showstringspaces=false,
+%   moredelim=[l][\color{orange}]{\&},
+%   moredelim=[l][\color{magenta}]{*},
+%   moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:},   % switch to value style at :
+%   morestring=[b]',
+%   morestring=[b]",
+%   literate =    {---}{{\ProcessThreeDashes}}3
+%                 {>}{{\textcolor{red}\textgreater}}1
+%                 {|}{{\textcolor{red}\textbar}}1
+%                 {\ -\ }{{\mdseries\ -\ }}3,
+% }
+
+\definecolor{codeBackground}{rgb}{0.9, 0.9, 0.8}
+
+\lstnewenvironment{mylisting}[1][]{%
+\lstset{
+moredelim=**[is][\bfseries]{|}{|},% bold everything in between ||
+moredelim=**[is][\itshape]{*}{*},  % italic everything in between **
+basicstyle=\ttfamily,
+captionpos=b,
+abovecaptionskip=\medskipamount,
+#1
+% caption={[#1]{#1}}        %%<---------------------- here
+}%
+\noindent\minipage{\linewidth}
+\mdframed[backgroundcolor=white,innertopmargin=5pt,skipabove=\topskip,skipbelow=\topskip]%
+}{%
+\endmdframed
+\endminipage
+%   \ignorespaces
+}
+
+\surroundwithmdframed[
+settings=\captionof{lstlisting}{}
+]{lstlisting}
+
+% = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%
+% END LISTINGS CONFIGURATION
+%
+% = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%
+% PACKAGE CONFIGURATIONS
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\pgfplotsset{compat=1.12}
+
+\setcounter{secnumdepth}{3}
+
+\lstdefinelanguage{algebra}
+{morekeywords={import,sort,constructors,observers,transformers,axioms,if,
+else,end},
+sensitive=false,
+morecomment=[l]{//s},
+}
+
+\graphicspath{ {images/} }
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%
+% START CUSTOM COMMANDS
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\newcommand{\bflow}{\textit{BenchFlow Framework}\xspace}
+\newcommand{\bflowproj}{\textit{BenchFlow}\xspace}
+\newcommand{\docker}{\textit{Docker}\xspace}
+\newcommand{\wfms}{\textit{WfMS}\xspace}
+\newcommand{\tm}{\textit{Test-Manager}\xspace}
+\newcommand{\exm}{\textit{Experiment-Manager}\xspace}
+\newcommand{\dm}{\textit{Data-Manager}\xspace}
+\newcommand{\drm}{\textit{Driver-Maker}\xspace}
+\newcommand{\minio}{\textit{Minio}\xspace}
+\newcommand{\faban}{\textit{Faban}\xspace}
+\newcommand{\tdef}{\emph{Test Definition}\xspace}
+\newcommand{\exdef}{\emph{Experiment Definition}\xspace}
+\newcommand{\tbundle}{\emph{Test Bundle}\xspace}
+\newcommand{\exbundle}{\emph{Experiment Bundle}\xspace}
+\newcommand{\ddesc}{\emph{Deployment Descriptor}\xspace}
+\newcommand{\dsl}{\emph{DSL}\xspace}
+\newcommand{\testlc}{\emph{Test Life Cycle}\xspace}
+\newcommand{\explc}{\emph{Experiment Life Cycle}\xspace}
+\newcommand{\bft}{\emph{BenchFlow Test}\xspace}
+\newcommand{\bfex}{\emph{BenchFlow Experiment}\xspace}
+\newcommand{\test}{\emph{Test}\xspace}
+\newcommand{\experiment}{\emph{Experiment}\xspace}
+\newcommand{\trial}{\emph{Trial}\xspace}
+
+\newcommand{\bflifecycle}{\textit{BenchFlow Life Cycle}\xspace}
+
+\newcommand{\simonethesis}{Master Thesis of \citet{DAvico:uk}\xspace}
+\newcommand{\gabrielethesis}{Master Thesis of \citet{Cerfoglio:wj}\xspace}
+
+\newcommand{\testmodel}{\texttt{BenchFlowTest}\xspace}
+\newcommand{\experimentmodel}{\texttt{BenchFlowExperiment}\xspace}
+
+\newcommand{\eg}{e.g.,\xspace}
+\newcommand{\ie}{i.e.,\xspace}
+
+\newcommand\subbedChapter[2]{\chapter
+[\#1\hfil\hbox{}\protect\linebreak{\itshape\#2}]%
+{\#1\\[2ex]\Large\itshape\#2}%
+}

@@ -1,0 +1,114 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{layout/si-msc-proposal}
+\usepackage{float}
+\usepackage{todonotes}
+\usepackage{dirtytalk}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage{pgfgantt}
+\usepackage{hyperref}
+\graphicspath{ {./images/} }
+
+\newcommand\YAMLcolonstyle{\color{red}\mdseries}
+\newcommand\YAMLkeystyle{\color{black}\bfseries}
+\newcommand\YAMLvaluestyle{\color{blue}\mdseries}
+
+\makeatletter
+
+\newcommand\language@yaml{yaml}
+
+\expandafter\expandafter\expandafter\lstdefinelanguage
+\expandafter{\language@yaml}
+{
+    keywords={true,false,null,y,n},
+    keywordstyle=\color{darkgray}\bfseries,
+    basicstyle=\YAMLkeystyle,
+    sensitive=false,
+    comment=[l]{\#},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{purple}\ttfamily,
+    stringstyle=\YAMLvaluestyle\ttfamily,
+    moredelim=[l][\color{orange}]{\&},
+    moredelim=[l][\color{magenta}]{*},
+    moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:},
+    morestring=[b]',
+    morestring=[b]",
+    literate =    {---}{{\ProcessThreeDashes}}3
+        {>}{{\textcolor{red}\textgreater}}1
+        {|}{{\textcolor{red}\textbar}}1
+        {\ -\ }{{\mdseries\ -\ }}3,
+}
+
+\setlength\parindent{0pt}
+
+\author{Edoardo Riggio}
+
+\title{API Scout: An Information Retrieval System for OpenAPI Specifications}
+
+\abstract{
+
+    The primary objective of this thesis is to create an information retrieval system enabling users to explore a comprehensive collection of OpenAPI specifications. The system will use historical versioned data - scraped from existing github repositories - as well as user-uploaded data. \\
+
+    This platform serves a dual purpose, catering to both academics and developers. In the case of academics, this platform can serve as a repository from which to conduct research, facilitating more in-depth studies on API specifications and their evolution. On the other hand, developers can look up several different examples that could help them get started with their own OpenAPI documentation. \\
+
+    The main contributions of this thesis include two crucial aspects: data engineering and software engineering. In the first case, the thesis will delve in the process of refining raw data and finding ways to classify the API specifications. In the second case, the thesis will define the architectural design and the development of the service itself.
+
+}
+
+\begin{document}
+
+    \maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% MAIN BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \tableofcontents
+    \listoffigures
+    \listoftables
+    \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \section{Introduction}\label{sec:introduction}
+
+    \subsection{Context}\label{subsec:context}
+    \input{sections/introduction/context}
+
+    \subsection{Motivation}\label{subsec:motivation}
+    \input{sections/introduction/motivation}
+
+    \subsection{Objective}\label{subsec:objective}
+    \input{sections/introduction/objective}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \section{Proposal}\label{sec:proposal}
+
+
+    \section{State of the Art}\label{sec:state-of-the-art}
+
+
+    \section{Preliminary Results - Feasibility Study}\label{sec:preliminary-results---feasibility-study}
+
+
+    \section{Work Plan for the Spring semester}\label{sec:work-plan-for-the-spring-semester}
+    \input{sections/plan/table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \newpage
+    \nocite{*}
+    \bibliographystyle{unsrt}
+    \bibliography{bibliography/bibliography}%
+
+\end{document}

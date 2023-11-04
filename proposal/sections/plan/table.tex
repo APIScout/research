@@ -1,0 +1,50 @@
+This section describes a high level view of the work plan for the spring semester.
+
+\begin{itemize}
+    \item Iteration 1: Data Analysis Phase
+    \begin{itemize}
+        \item Task 1: Setup project (Pick tools/technologies to use)
+        \item Task 2: Design of metrics to locate changes in evolution
+        \item Task 3: Setup database of metrics
+        \item Task 4: Classification of changes
+        \item Task 5: Evaluate and improve system
+    \end{itemize}
+    \item Iteration 2: Visualization Phase
+    \begin{itemize}
+        \item Task 1: High level visualization of API
+        \item Task 2: Drilled down visualization of API
+        \item Task 3: Visualizing changes
+        \item Task 4: Evaluate and improve system
+    \end{itemize}
+    \item Iteration 3: Report
+\end{itemize}
+\resizebox{\textwidth}{!}{
+    \begin{tikzpicture}
+        \begin{ganttchart}[
+            Mile1/.style={milestone/.append style={fill=red}},
+            x unit=1mm,
+            time slot format=isodate,
+            y unit title=20,
+            title height=.9,
+            bar height=0.2,
+            y unit chart=15,
+        ]
+        {2021-2-22}{2021-6-4}
+
+            \gantttitlecalendar{year, month=shortname} \\
+
+            \ganttgroup{1st Iteration}{2021-2-22}{2021-4-4} \\
+            \ganttbar{Task 1}{2021-2-22}{2021-2-28}\\
+            \ganttbar{Task 2}{2021-2-29}{2021-3-14}\\
+            \ganttbar{Task 3}{2021-3-15}{2021-3-28}\\
+            \ganttbar{Task 4}{2021-3-22}{2021-4-5}\\
+            \ganttbar{Task 5}{2021-3-29}{2021-4-11}\\
+            \ganttgroup{2nd Iteration}{2021-4-5}{2021-5-30} \\
+            \ganttbar{Task 1}{2021-4-5}{2021-4-18}\\
+            \ganttbar{Task 2}{2021-4-19}{2021-5-2}\\
+            \ganttbar{Task 3}{2021-5-3}{2021-5-16}\\
+            \ganttbar{Task 4}{2021-5-17}{2021-5-30}\\
+            \ganttgroup{Report}{2021-5-1}{2021-6-4} \\
+        \end{ganttchart}
+    \end{tikzpicture}
+}
