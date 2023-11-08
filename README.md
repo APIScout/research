@@ -1,1 +1,1 @@
-# thesis-data-analysis
+# thesis-research

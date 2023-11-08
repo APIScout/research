@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="render latex" type="CompoundRunConfigurationType">
+    <toRun name="main bibliography" type="BIBTEX_RUN_CONFIGURATION" />
+    <toRun name="main" type="LATEX_RUN_CONFIGURATION" />
+    <toRun name="move out pdf" type="ShConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>
