@@ -1,0 +1,29 @@
+news about nfl
+NFL v3
+
+aws iot service on secure tunneling
+AWS IoT Secure Tunneling
+
+driving license registration service
+Transport Department
+
+sentiment analysis service api
+Text Analytics & Sentiment Analysis API | api.text2data.com
+
+email mailbox checker
+MailboxValidator Free Email Checker
+
+country data standard api
+Interzoid Country Data Standardization API
+
+football match predictor
+Soccer v3 Projections
+
+policy administration client
+PolicyClient
+
+client to manage network
+NetworkManagementClient
+
+weather forecast by city
+Interzoid Get Weather City API
