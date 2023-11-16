@@ -163,3 +163,4 @@ cython_debug/
 latex/
 server.ini
 *.crt
+universal-sentence-encoder/
