@@ -1,0 +1,10 @@
+To find the most similar documents to a user-defined query, we need a way of comparing documents and defining what do we mean by similar.
+First of all, we need to represent documents in a more mathematical way.
+For this task, a document embedding model is employed -- we used the Universal Sentence Encoder~\cite{cer2018universal}.
+This encoder will transform a document into a vector of numbers.
+These vector of numbers are then stored somewhere -- ideally a database -- and assigned a name. \\ \\
+When a user wants to search for a specification, we have to use the document embedding model for the query, and then retrieve the top \textit{K} documents that are the most similar to the vectorized query.
+The similarity of two documents is defined by how much the two vectors (the one of the query and the one of the document) are distant from one another.
+The more the two vectors are close to each other, the more they are similar.
+To find out the \textit{K} nearest documents to the query, we can use the \textit{K}-Nearest Neighbors algorithm.
+This algorithm will return the \textit{K} nearest documents, thus the most similar.
