@@ -186,6 +186,7 @@ dependencies:
   - pip:
       - absl-py==2.0.0
       - astunparse==1.6.3
+      - autocommand==2.2.2
       - cachetools==5.3.2
       - flatbuffers==23.5.26
       - gast==0.5.4
@@ -194,10 +195,13 @@ dependencies:
       - google-pasta==0.2.0
       - grpcio==1.59.2
       - h5py==3.10.0
+      - importlib-metadata==6.8.0
+      - importlib-resources==6.1.1
       - keras==2.14.0
       - libclang==16.0.6
       - markdown==3.5.1
       - ml-dtypes==0.2.0
+      - mongo-connector==3.1.1
       - oauthlib==3.2.2
       - opt-einsum==3.3.0
       - protobuf==4.25.0
@@ -215,3 +219,4 @@ dependencies:
       - termcolor==2.3.0
       - werkzeug==3.0.1
       - wrapt==1.14.1
+      - zipp==3.17.0
