@@ -1,10 +1,16 @@
 To find the most similar documents to a user-defined query, we need a way of comparing documents and defining what do we mean by similar.
-First of all, we need to represent documents in a more mathematical way.
+% TODO - Add citation
+First of all, we need to represent documents in a more mathematical way~\cite{}.
+% TODO - Explain the reason behind why I chose USE
 For this task, a document embedding model is employed -- we used the Universal Sentence Encoder~\cite{cer2018universal}.
 This encoder will transform a document into a vector of numbers.
-These vector of numbers are then stored somewhere -- ideally a database -- and assigned a name. \\ \\
+These vectors of numbers are then stored somewhere -- ideally a database -- and assigned a name. \\ \\
 When a user wants to search for a specification, we have to use the document embedding model for the query, and then retrieve the top \textit{K} documents that are the most similar to the vectorized query.
+% TODO - Explain what measurement was used for similarity computation, and which are the available measurements.
 The similarity of two documents is defined by how much the two vectors (the one of the query and the one of the document) are distant from one another.
+We can use one of the following metrics to define similarity: L2 norm, dot product, cosine, and maximum inner product.
+When dealing with vectorized textual data, the best metric to use is the cosine similarity metric, which is the one we chose for our platform.
 The more the two vectors are close to each other, the more they are similar.
-To find out the \textit{K} nearest documents to the query, we can use the \textit{K}-Nearest Neighbors algorithm.
+% TODO - Add citation
+To find out the \textit{K} nearest documents to the query, we can use the \textit{K}-Nearest Neighbors (\textit{K}-NN~\cite{}) algorithm.
 This algorithm will return the \textit{K} nearest documents, thus the most similar.

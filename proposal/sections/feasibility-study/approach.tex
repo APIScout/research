@@ -1,0 +1,12 @@
+When dealing with OpenAPI Specifications, we are working with JSON or YAML files (which are structured).
+Moreover, these files follow the OpenAPI Specifications; thus we know that the documents will contain a very similar structure. \\ \\
+Since we are dealing with a very high number of documents, it is paramount to have a fast and reliable index that can be searched through.
+For this reason, we decided to use vector embeddings to represent documents in our database.
+Embedding models offer a way of transforming documents into vectors of numbers, and -- in our case -- we used Google's Universal Sentence Encoder~\cite{cer2018universal} to perform the aforementioned task.
+The embedding is done on only a part of the document's content, namely everything that is contained in the \verb|description|, \verb|name|, \verb|title|, and \verb|summary| tags. \\ \\
+We chose to do so because these tags are the only ones that contain natural language descriptions of the API in general or of its endpoints.
+After the creation of the embeddings, we saved the vectors -- as well as the name, version, and id -- of the specifications in an ElasticSearch database.
+We chose ElasticSearch and the ELK (Elastic-Logstash-Kibana) stack because it is very rapid and scalable.
+Moreover, ElasticSearch offers the possibility of searching documents based on the \textit{K}-NN algorithm. \\ \\
+This solution seems to be the most promising for the amount of data and hardware availability we have for this project.
+We were considering also deep-learning models but discarded them since they are resource intensive and would be overkill for this kind of application.
