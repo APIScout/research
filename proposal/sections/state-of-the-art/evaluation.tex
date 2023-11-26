@@ -1,0 +1,19 @@
+To evaluate the performance of our solution, we used average precision and recall.
+In information retrieval systems~\cite{frakes_information_1992}, precision is defined as the inverse of the position in which the document -- defined in the ground truth -- was found in (Equation~\ref{eq:precision}).
+Where $POS$ is the position in which the document was found in ($1$ to $5$ if the document is in the top $5$, $0$ otherwise).
+\begin{equation}
+    P_i = \frac{1}{POS_i}
+    \label{eq:precision}
+\end{equation}
+The average precision is the average of the precisions among all queries defined in the ground truth (Equation ~\ref{eq:avg-precision}).
+Where $N$ is the total number of queries in the ground truth.
+\begin{equation}
+    \overline{P} = \frac{1}{N} \cdot \sum^N_{i=1}P_i
+    \label{eq:avg-precision}
+\end{equation}
+Finally, the recall is defined as the number of documents found in the top $5$ -- regardless of the position they were found in -- over the total number of queries (Equation~\ref{eq:recall}).
+Where $C$ is the number of documents found in the top $5$, and $N$ is the total number of queries in the ground truth.
+\begin{equation}
+    R = \frac{C}{N}
+    \label{eq:recall}
+\end{equation}

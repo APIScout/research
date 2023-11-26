@@ -9,7 +9,8 @@ With the \("\)Y\("\) markers representing the queries, and the dots representing
 % TODO - Explain how the ground truth was computed
 Moreover, we performed a validation step with a ground truth.
 % TODO - Add reference to precision and recall definitions
-From the validation step, we concluded that the precision of the document retrieval is $p = 0.6$, while the recall is $r = 1.0$.
+From the validation step, we concluded that the average precision and recall of the document retrieval are:
+\[P_a = 0.6 ~~~~~~ R = 1.0\]
 This validation was done on 10 different queries.
 The position in which each ground truth appeared in the searches can be found below.
 \begin{verbatim}
@@ -43,7 +44,7 @@ For example, if we try searching using the query: \("\)american sports news\("\)
 As we can see in the results above, the engine is able to recognize that both the \textit{NFL} and the \textit{MLB} are professional American sport leagues.
 The former being the National Football League, and the latter being the Major League Baseball.
 Moreover, it is also able to understand that soccer is a sport and return it. \\ \\
-As can be seen both in the precision ($p = 0.6$), and the above example, there are still some noisy results that match part or none of the queries, but this is acceptable.
+As can be seen both in the average precision ($P_a = 0.6$), and the above example, there are still some noisy results that match part or none of the queries, but this is acceptable.
 The reason is that this is not the only means of searching.
 % TODO - Further filtering from the result of the knn operation
 In tandem with the natural language query, there is also a DSL that can be used to filter the documents and obtain a more accurate result.
