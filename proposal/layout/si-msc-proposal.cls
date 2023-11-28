@@ -163,6 +163,10 @@ Thesis Proposal class]
 
 %%%%%%%%%%%%%%%%  ADVISOR AND ASSISTANT(S) %%%%%%%%%%%%%%%%
 
+        \vspace{5mm}
+        \noindent {\textbf{Advisor:} Prof. Dr. Cesare Pautasso}\\
+        \noindent {\textbf{Co-Advisor:} Souhalia Serbout}
+
 %\noindent\textsf{\textbf{Advisors}~} \\
 %\DTLforeach*[\DTLiseq{\type}{r}]{committee}
 %{\actitle=title,\first=first,\last=last,\type=type}{

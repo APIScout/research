@@ -1,0 +1,30 @@
+To evaluate the performance of our information retrieval system, we used a ground truth.
+Our ground truth consists in a textual file in which we have a query and the expected result.
+Some examples are depicted in Figure~\ref{fig:ground-truth}.
+\begin{figure}
+    \centering
+    \begin{verbatim}
+         ...
+         aws iot service on secure tunneling
+         AWS IoT Secure Tunneling
+
+         driving license registration service
+         Transport Department
+
+         sentiment analysis service api
+         Text Analytics & Sentiment Analysis API | api.text2data.com
+
+         email mailbox checker
+         MailboxValidator Free Email Checker
+         ...
+    \end{verbatim}
+    \caption{Ground Truth}
+    \label{fig:ground-truth}
+\end{figure}
+The file is divided into blocks of two lines.
+The first line represents the query that will be vectorized and passed to the $K$-NN query.
+On the other hand, the second line represents the title of the document that needs to be found in the top 5 results of the query.
+The title of the document on the second line of the block has been chosen manually, this means that we read some of the API specifications and wrote a query that can be connected to that specific document. \\ \\
+However, in some cases, there can be multiple documents that satisfy one query; for example, in the case of the query \("\)driving license registration service\("\).
+In the database, there are several different APIs related to the query mentioned: \("\)Transport Department, Tamil Nadu\("\) and \("\)Transport Department, Haryana\("\).
+In such cases, we take the first occurrence that starts with the words \("\)Transport Department\("\).
