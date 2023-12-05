@@ -1,22 +1,25 @@
-This section describes a high level view of the work plan for the spring semester.
+This section describes a high-level view of the work plan for the spring semester.
 
 \begin{itemize}
-    \item Iteration 1: Data Analysis Phase
+    \item Iteration 1: Search Engine Phase
     \begin{itemize}
-        \item Task 1: Setup project (Pick tools/technologies to use)
-        \item Task 2: Design of metrics to locate changes in evolution
-        \item Task 3: Setup database of metrics
-        \item Task 4: Classification of changes
-        \item Task 5: Evaluate and improve system
+        \item Task 1: Project setup and database migration
+        \item Task 2: DSL implementation and parser
+        \item Task 3: Information retrieval implementation
+        \item Task 4: Write tests for the system
     \end{itemize}
-    \item Iteration 2: Visualization Phase
+    \item Iteration 2: Evaluation Phase
     \begin{itemize}
-        \item Task 1: High level visualization of API
-        \item Task 2: Drilled down visualization of API
-        \item Task 3: Visualizing changes
-        \item Task 4: Evaluate and improve system
+        \item Task 1: Evaluate the accuracy of the results
+        \item Task 2: Evaluate the performance of the system
     \end{itemize}
-    \item Iteration 3: Report
+    \item Iteration 3: Visualization Phase
+    \begin{itemize}
+        \item Task 1: API history given different versions
+        \item Task 2: General and query-related statistics
+        \item Task 3: Write tests for the system
+    \end{itemize}
+    \item Iteration 4: Report
 \end{itemize}
 \resizebox{\textwidth}{!}{
     \begin{tikzpicture}
@@ -29,22 +32,26 @@ This section describes a high level view of the work plan for the spring semeste
             bar height=0.2,
             y unit chart=15,
         ]
-        {2021-2-22}{2021-6-4}
+        {2024-2-22}{2024-6-2}
 
             \gantttitlecalendar{year, month=shortname} \\
 
-            \ganttgroup{1st Iteration}{2021-2-22}{2021-4-4} \\
-            \ganttbar{Task 1}{2021-2-22}{2021-2-28}\\
-            \ganttbar{Task 2}{2021-2-29}{2021-3-14}\\
-            \ganttbar{Task 3}{2021-3-15}{2021-3-28}\\
-            \ganttbar{Task 4}{2021-3-22}{2021-4-5}\\
-            \ganttbar{Task 5}{2021-3-29}{2021-4-11}\\
-            \ganttgroup{2nd Iteration}{2021-4-5}{2021-5-30} \\
-            \ganttbar{Task 1}{2021-4-5}{2021-4-18}\\
-            \ganttbar{Task 2}{2021-4-19}{2021-5-2}\\
-            \ganttbar{Task 3}{2021-5-3}{2021-5-16}\\
-            \ganttbar{Task 4}{2021-5-17}{2021-5-30}\\
-            \ganttgroup{Report}{2021-5-1}{2021-6-4} \\
+            \ganttgroup{Search Engine}{2024-2-22}{2024-4-15} \\
+            \ganttbar{Setup}{2024-2-22}{2024-2-29} \\
+            \ganttbar{DSL}{2024-3-1}{2024-3-25} \\
+            \ganttbar{Retrieval}{2024-3-22}{2024-4-15} \\
+            \ganttbar{Testing}{2024-3-1}{2024-4-15} \\
+
+            \ganttgroup{Evaluation}{2024-3-1}{2024-4-15} \\
+            \ganttbar{Accuracy}{2024-3-1}{2024-4-15} \\
+            \ganttbar{Performance}{2024-3-1}{2024-4-15} \\
+
+            \ganttgroup{Visualization}{2024-4-16}{2024-5-31} \\
+            \ganttbar{History}{2024-4-16}{2024-5-10} \\
+            \ganttbar{Statistics}{2024-5-7}{2024-5-31} \\
+            \ganttbar{Testing}{2024-4-16}{2024-5-31} \\
+
+            \ganttgroup{Report}{2024-3-1}{2024-6-2} \\
         \end{ganttchart}
     \end{tikzpicture}
 }

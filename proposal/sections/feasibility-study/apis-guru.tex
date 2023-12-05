@@ -1,0 +1,23 @@
+After validating our system against a tailored ground truth, we compared the results of API Scout with the ones of APIs.guru.
+The comparison was performed by taking the queries from the ground truth from Subsection~\ref{subsec:ground-truth} and searching for them on the APIs.guru website.
+The result of this evaluation is depicted in Figure~\ref{fig:apis-guru-eval}.
+APIs.guru's platform has an average precision ($\overline{P}$) of 0, and a recall ($R$) of 0.
+\begin{figure}[h]
+    \begin{verbatim}
+  Position in which the ground truth was found:
+
+      "NFL v3 Ply-by-Play" was NOT found
+      "AWS IoT Secure Tunneling" was NOT found
+      "Transport Department" was NOT found
+      "Text Analytics & Sentiment Analysis API | api.text2data.com" was
+        NOT found
+      "MailboxValidator Free Email Checker" was NOT found
+      "Interzoid Country Data Standardization API" was NOT found
+      "Soccer v3 Projections" was NOT found
+      "PolicyClient" was NOT found
+      "NetworkManagementClient" was NOT found
+      "Interzoid Get Weather City API" was NOT found
+    \end{verbatim}
+    \caption{APIs.guru Evaluation}
+    \label{fig:apis-guru-eval}
+\end{figure}

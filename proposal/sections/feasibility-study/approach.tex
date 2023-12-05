@@ -2,7 +2,7 @@ When dealing with OpenAPI Specifications, we are working with JSON or YAML files
 Moreover, these files follow the OpenAPI Specifications; thus we know that the documents will contain a very similar structure. \\ \\
 Since we are dealing with a very high number of documents, it is paramount to have a fast and reliable index that can be searched through.
 For this reason, we decided to use vector embeddings to represent documents in our database.
-Embedding models offer a way of transforming documents into vectors of numbers, and -- in our case -- we used Google's Universal Sentence Encoder~\cite{cer2018universal} to perform the aforementioned task.
+Embedding models offer a way of transforming documents into vectors of numbers, and -- in our case -- we used Google's Universal Sentence Encoder~\cite{cer_universal_2018} to perform the aforementioned task.
 The embedding is done on only a part of the document's content, namely everything that is contained in the \verb|description|, \verb|name|, \verb|title|, and \verb|summary| tags. \\ \\
 We chose to do so because these tags are the only ones that contain natural language descriptions of the API in general or of its endpoints.
 After the creation of the embeddings, we saved the vectors -- as well as the name, version, and id -- of the specifications in an ElasticSearch database.

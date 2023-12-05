@@ -13,4 +13,18 @@
     </texify-bibtex>
     <method v="2" />
   </configuration>
+  <configuration default="false" name="main bibliography" type="BIBTEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
+    <texify-bibtex>
+      <compiler>BIBTEX</compiler>
+      <compiler-path />
+      <compiler-arguments />
+      <envs>
+        <env name="BIBINPUTS" value="$PROJECT_DIR$/proposal/" />
+        <env name="BSTINPUTS" value="$PROJECT_DIR$/proposal/:" />
+      </envs>
+      <main-file>$PROJECT_DIR$/proposal/main.tex</main-file>
+      <aux-dir>$PROJECT_DIR$/out/latex</aux-dir>
+    </texify-bibtex>
+    <method v="2" />
+  </configuration>
 </component>

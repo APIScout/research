@@ -27,14 +27,6 @@ Thesis Proposal class]
 \RequirePackage{xifthen}
 \RequirePackage{lipsum}
 
-%\RequirePackage{listings}
-
-%\RequirePackage{subcaption}
-
-%\captionsetup{labelfont={bf}}
-%\usepackage{subcaption}
-%\usepackage{listings}
-
 %%%
 \DeclareOption*{% 
     \PassOptionsToClass{\CurrentOption}{document}%
@@ -52,6 +44,7 @@ Thesis Proposal class]
 \RequirePackage[T1]{fontenc}
 \RequirePackage[charter]{mathdesign}
 \RequirePackage[scaled]{beramono}
+
 \renewcommand{\sfdefault}{uop}
 \renewcommand{\scshape}{%
     \not@math@alphabet\scshape\relax
@@ -68,48 +61,6 @@ Thesis Proposal class]
 
 \RequirePackage[font=footnotesize,labelsep=period,bf]{caption}
 \setlength{\captionmargin}{15mm}
-
-%%datatool
-%\RequirePackage{datatool}
-%\RequirePackage{calc}
-%
-%%commands to print empty values in the database 
-%\newcommand{\print@blank}[1]{\ifthenelse{\equal{#1}{!blank!}}{}{#1\ }}
-%\newcommand{\print@empty}[1]{\ifthenelse{\equal{#1}{!blank!}}{}{#1}}
-%
-%%%% populate the committee database
-%%%% format of the rows (name of the columns in brackets) :
-%%%% Title [title], First and Middle [first], Last [last], Affiliation [aff], Type ([a]dvisor, phd [d]irector, [i]nternal) [type]
-%\newenvironment{committee}{%
-%\DTLnewdb{committee}
-%}%
-%{%
-%\DTLsort{type,last,first}{committee}
-%}
-%
-%\newcounter{advisors}
-%\newcommand*{\advisor}[4][Universit\`a della Svizzera Italiana, Switzerland]{%
-%\DTLnewrow{committee}
-%\ifthenelse{\isempty{#2}}{\DTLnewdbentry{committee}{title}{!blank!}}{%
-%\DTLnewdbentry{committee}{title}{#2}}
-%\DTLnewdbentry{committee}{first}{#3}
-%\DTLnewdbentry{committee}{last}{#4}
-%\DTLnewdbentry{committee}{aff}{#1}
-%\DTLnewdbentry{committee}{type}{r}
-%\stepcounter{advisors}
-%}
-%
-%\newcounter{coadvisors}
-%\newcommand*{\coadvisor}[4][Universit\`a della Svizzera Italiana, Switzerland]{%
-%\DTLnewrow{committee}
-%\ifthenelse{\isempty{#2}}{\DTLnewdbentry{committee}{title}{!blank!}}{%
-%\DTLnewdbentry{committee}{title}{#2}}
-%\DTLnewdbentry{committee}{first}{#3}
-%\DTLnewdbentry{committee}{last}{#4}
-%\DTLnewdbentry{committee}{aff}{#1}
-%\DTLnewdbentry{committee}{type}{a}
-%\stepcounter{coadvisors}
-%}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -166,16 +117,6 @@ Thesis Proposal class]
         \vspace{5mm}
         \noindent {\textbf{Advisor:} Prof. Dr. Cesare Pautasso}\\
         \noindent {\textbf{Co-Advisor:} Souhalia Serbout}
-
-%\noindent\textsf{\textbf{Advisors}~} \\
-%\DTLforeach*[\DTLiseq{\type}{r}]{committee}
-%{\actitle=title,\first=first,\last=last,\type=type}{
-%\hspace{-0.1cm}\textsf{\print@blank{\actitle}\first \ \last~}%
-%}
-%\ifthenelse{\value{coadvisors} > 0}{\hfill \textsf{\textbf{\\Co-advisor}\ifthenelse{\value{coadvisors} > 1}{\textsf{\textbf{s}}{}}}}{}\\
-%\DTLforeach*[\DTLiseq{\type}{a}]{committee}%
-%{\actitle=title,\first=first,\last=last,\type=type}{\DTLiffirstrow{}{, }\textsf{\print@blank{\actitle}\first \ \last}%
-%}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

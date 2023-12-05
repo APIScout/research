@@ -1,0 +1,47 @@
+@startuml
+node "Frontend" {
+    [Web Application] as WA
+}
+
+cloud "MongoDB Cloud" {
+    database "Specifications Collection" {
+        [Specifications] as SP
+    }
+}
+
+cloud "ElasticSearch Cloud" {
+    database "Embeddings Index" {
+        [Embeddings] as EM
+    }
+
+    database "Metrics Index" {
+        [Metrics] as ME
+    }
+}
+
+cloud "Specifications Retriever Cloud" {
+    [Statistics Computer] as SC
+    [Documents Retriever] as DR
+    [ElasticSearch Driver] as ESD
+    [MongoDB Driver] as MDD
+    [Specifications Sync] as SS
+    [DSL Parser] as DP
+
+    MDD - SS
+    DR - DP
+    SC - DR
+    SS - ESD
+    MDD -- DR
+    ESD -- DR
+}
+
+DR -- WA : "HTTPS"
+SP -- MDD : "HTTPS"
+EM -- ESD : "HTTPS"
+ME -- ESD : "HTTPS"
+
+
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Courier
+@enduml

@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -12,6 +12,7 @@
 \usepackage{color}
 \usepackage{pgfgantt}
 \usepackage{hyperref}
+\usepackage{enumitem}
 
 \graphicspath{ {./images/} }
 
@@ -70,7 +71,6 @@
 
     \tableofcontents
     \listoffigures
-    \listoftables
     \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -108,6 +108,9 @@
     \section{Preliminary Results - Feasibility Study}\label{sec:preliminary-results---feasibility-study}
     \input{sections/feasibility-study/feasibility-study}
 
+    \subsection{Data Analysis}\label{subsec:data-analysis}
+    \input{sections/feasibility-study/data-analysis}
+
     \subsection{Approach}\label{subsec:approach}
     \input{sections/feasibility-study/approach}
 
@@ -117,13 +120,14 @@
     \subsection{Results}\label{subsec:results}
     \input{sections/feasibility-study/results}
 
-    % TODO - Comparison with APIs.guru
     \subsection{Comparison with APIs.guru}\label{subsec:comparison-with-apis.guru}
+    \input{sections/feasibility-study/apis-guru}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     \section{Proposal}\label{sec:proposal}
+    \input{sections/proposal/proposal}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
